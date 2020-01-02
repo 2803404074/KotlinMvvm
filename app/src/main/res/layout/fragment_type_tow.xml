@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/touming2"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_demo"
+            android:overScrollMode="never"
+            android:paddingHorizontal="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/skv"
+            android:layout_gravity="center"
+            style="@style/SpinKitView.Large.Wave"
+            app:SpinKit_Color="@color/colorAccent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+    </RelativeLayout>
+</layout>

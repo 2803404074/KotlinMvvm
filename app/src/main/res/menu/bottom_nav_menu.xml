@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/tuij"
+        android:title="推荐" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/jingj"
+        android:title="竞技" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/xiuc"
+        android:title="秀才" />
+    <item
+        android:id="@+id/navigation"
+        android:icon="@drawable/my"
+        android:title="Cool" />
+
+</menu>

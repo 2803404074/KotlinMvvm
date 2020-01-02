@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:paddingHorizontal="5dp"
+    android:paddingVertical="5dp"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_touming"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@android:drawable/ic_btn_speak_now"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/cardview_light_background"
+        android:layout_height="wrap_content"
+        android:text="吉他版-亡灵序曲"/>
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="5dp"
+        android:background="@color/cardview_light_background"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@android:drawable/ic_search_category_default"/>
+</LinearLayout>

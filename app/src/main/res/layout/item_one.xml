@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginBottom="8dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/rlContent"
+        android:background="@drawable/shape_white"
+        tools:context=".one.fragment.OneFragment">
+
+        <!--   fresco:roundAsCircle="true" 圆形-->
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/ivContent"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            fresco:progressBarImage="@drawable/load_err"
+            fresco:roundTopLeft="true"
+            fresco:roundTopRight="true"
+            fresco:roundBottomLeft="false"
+            fresco:roundBottomRight="false"
+            fresco:roundedCornerRadius="8dp"/>
+
+        <ImageView
+            android:id="@+id/imgPlay"
+            android:layout_above="@+id/tvData"
+            android:layout_width="15dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="15dp"
+            android:src="@drawable/play"/>
+
+        <TextView
+            android:id="@+id/tvPlayNum"
+            android:layout_toRightOf="@+id/imgPlay"
+            android:layout_above="@+id/tvData"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#bfbfbf"
+            android:text="156"/>
+
+
+        <ImageView
+            android:id="@+id/imgComment"
+            android:layout_toRightOf="@+id/tvPlayNum"
+            android:layout_above="@+id/tvData"
+            android:layout_width="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="15dp"
+            android:src="@drawable/comment"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/imgComment"
+            android:layout_above="@+id/tvData"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#bfbfbf"
+            android:text="156"/>
+
+        <TextView
+            android:id="@+id/tvData"
+            android:layout_below="@+id/ivContent"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_marginTop="3dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:lines="2"
+            android:ellipsize="end"
+            android:textColor="@color/textTitle"
+            android:text="吉他大师教你如何提高手指灵敏度" />
+
+        <LinearLayout
+            android:layout_below="@+id/tvData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_939393"
+                android:textSize="11sp"
+                android:text="吉他"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/color_939393"
+                android:textSize="11sp"
+                android:text="○"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_939393"
+                android:textSize="11sp"
+                android:text="视频录像"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/more"/>
+    </RelativeLayout>
+</layout>

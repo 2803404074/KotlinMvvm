@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tuhao.baselibrary.baseview.BaseViewModel
 import com.tuhao.baselibrary.model.DemoMo
 import com.tuhao.baselibrary.model.MoreType
+import com.tuhao.baselibrary.ui.custom.DividerGridItemDecoration
 import com.tuhao.baselibrary.util.*
 import com.tuhao.demo.R
 import com.youth.banner.Banner
@@ -20,6 +21,8 @@ import java.util.*
 
 
 class TypeViewModel(application: Application) : BaseViewModel(application){
+
+    var sunAdapter:MyBaseAdapter<DemoMo>?=null
 
     var imgRes:Int = 0
 
@@ -39,8 +42,7 @@ class TypeViewModel(application: Application) : BaseViewModel(application){
             mDaMore.add(MoreType(R.layout.item_image, 3))
         }
         mDaMore.add(MoreType(R.layout.layout_recy, 1))
-        mDaMore.add(MoreType(R.layout.item_advertisement, 2))
-        mDaMore.add(MoreType(R.layout.layout_recy, 1))
+
         adapterMore = object : MyMoreBaseAdapter<MoreType>(mDaMore) {
             override fun myConvert(helper: MyViewHolder, item: MoreType, type: Int) {
                 when (type) {
@@ -49,11 +51,8 @@ class TypeViewModel(application: Application) : BaseViewModel(application){
                         startBanner(mBanner,view)
                     }
                     1 -> {
-                        var rec = helper.getView<RecyclerView>(R.id.recy_demo)
-                        rec.layoutManager = GridLayoutManager(context, 2)
-
                         var mDa = mutableListOf<DemoMo>()
-                        for (index in 1..10) {
+                        for (index in 1..20) {
                             var d = DemoMo()
 
                             if (index % 2 == 0) {
@@ -67,27 +66,24 @@ class TypeViewModel(application: Application) : BaseViewModel(application){
                             }
                             mDa.add(d)
                         }
+                        var rec = helper.getView<RecyclerView>(R.id.recy_demo)
+                        rec.layoutManager = GridLayoutManager(context, 2)
+                        rec.addItemDecoration(DividerGridItemDecoration(context))
+                        if (sunAdapter == null){
+                            sunAdapter = object : MyBaseAdapter<DemoMo>(mDa, R.layout.item_one) {
+                                override fun myConvert(helper: MyViewHolder, item: DemoMo) {
+                                    helper.setBackgroundRes(R.id.rlContent,itemColor)
+                                    helper.getView<TextView>(R.id.tvData).text = item.userName
+                                    helper.setDraViewByUrl(R.id.ivContent, item.passWords)
+                                    helper.getView<ImageView>(R.id.ivMore)
+                                        .setOnClickListener {
 
-                        var mAdapter = object : MyBaseAdapter<DemoMo>(mDa, R.layout.item_one) {
-                            override fun myConvert(helper: MyViewHolder, item: DemoMo) {
-                                helper.setBackgroundRes(R.id.rlContent,itemColor)
-                                helper.getView<TextView>(R.id.tvData).text = item.userName
-                                helper.setDraViewByUrl(R.id.ivContent, item.passWords)
-                                helper.getView<ImageView>(R.id.ivMore)
-                                    .setOnClickListener {
-
-                                    }
+                                        }
+                                }
                             }
                         }
-                        rec.adapter = mAdapter
+                        rec.adapter = sunAdapter
                     }
-                    2 -> {
-                        //加载广告
-                        var img = helper.getView<ImageView>(R.id.ivContent)
-                        var a = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578406498&di=5b13c25315ecfca33fea12015d393bf0&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F17%2F08%2F98%2F84a58PICWZe_1024.jpg"
-                        GlideImageLoader().displayImage(null,a,img)
-                    }
-
                     3->{
                         helper.setBackgroundRes(R.id.mImage,imgRes)
                     }

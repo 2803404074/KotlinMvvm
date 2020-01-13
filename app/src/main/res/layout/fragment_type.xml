@@ -10,7 +10,6 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recy_demo"
             android:overScrollMode="never"
-            android:paddingHorizontal="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <com.github.ybq.android.spinkit.SpinKitView

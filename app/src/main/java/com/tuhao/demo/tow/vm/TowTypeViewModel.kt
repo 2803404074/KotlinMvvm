@@ -28,8 +28,8 @@ class TowTypeViewModel(application: Application) : BaseViewModel(application){
 
     fun initMoreAdapter(context: Context) {
         mDaMore.add(MoreType(R.layout.layout_recy, 1))
-        mDaMore.add(MoreType(R.layout.item_advertisement, 2))
-        mDaMore.add(MoreType(R.layout.layout_recy, 1))
+
+
         adapterMore = object : MyMoreBaseAdapter<MoreType>(mDaMore) {
             override fun myConvert(helper: MyViewHolder, item: MoreType, type: Int) {
                 when (type) {
@@ -56,12 +56,6 @@ class TowTypeViewModel(application: Application) : BaseViewModel(application){
                             }
                         }
                         rec.adapter = mAdapter
-                    }
-                    2 -> {
-                        //加载广告
-                        var img = helper.getView<ImageView>(R.id.ivContent)
-                        var a = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578406498&di=5b13c25315ecfca33fea12015d393bf0&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F17%2F08%2F98%2F84a58PICWZe_1024.jpg"
-                        GlideImageLoader().displayImage(null,a,img)
                     }
                 }
             }
